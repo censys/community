@@ -1,0 +1,27 @@
+{
+	"Summary": 
+	[
+		"Manage the tags and seeds of your assets in the Censys Attack Surface Management platform."
+	],
+
+	"Options":
+	[
+		{
+			"Task": "seeds",
+			"Description": "Imports new IP addresses from Qualys VM as seeds with the specified label."
+		},
+		{
+			"Task": "tags",
+			"Description": "Tag hosts from Qualys VM as managed or unmanaged in the ASM platform."
+		}
+	],
+
+	"Footer":
+	[
+		"For support visit: https://support.censys.io",
+		"API docs can be found here: https://app.censys.io/api-docs"
+	]
+
+}
+
+

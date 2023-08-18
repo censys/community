@@ -1,0 +1,33 @@
+{
+	"Summary": 
+	[
+		"Manage the tags for your assets in the Censys Attack Surface Management platform."
+	],
+
+	"Options":
+	[
+		{
+			"Option": "--unmanagedTag",
+			"Value(s)": "",
+			"Default": "",
+			"req": "   ",
+			"Description": "The tag for hosts in the Censys ASM platform that are NOT currently in your Qualys VM account."
+		},
+		{ 
+			"Option": "--managedTag",
+			"Value(s)": "",
+			"Default": "",
+			"req": "   ",
+			"Description": "The tag for hosts in the Censys ASM platform that ARE currently in your Qualys VM account."
+		}
+	],
+
+	"Footer":
+	[
+		"For support visit: https://support.censys.io",
+		"API docs can be found here: https://app.censys.io/api-docs"
+	]
+
+}
+
+

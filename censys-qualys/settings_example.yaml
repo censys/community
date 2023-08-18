@@ -1,0 +1,31 @@
+---
+
+censys:
+  authentication:
+  # Find this key on app.censys.io/admin
+    asm_api_key: your_asm_api_key
+
+
+  run:
+    - command: importFromLogbook
+      # Interval for command to run in minutes    
+      interval: 120
+
+      # If true, runs immediately on startup, if false, waits for the interval set above      
+      startup: true
+
+      options:
+        idFrom:
+
+        # set trialMode to true when testing against a trial instance of Qualys VM
+        #  this will limit the number of IPs sent to Qualys to 20 to avoid exceeding the trial limit
+        trialMode: false
+
+        addIps: true  # this will add IPs from logbook events with type HOST and Operation ASSOCIATE
+        excludeIps: false # this will exclude IPs from logbook events with type HOST and Operation DISASSOCIATE
+
+
+qualys:
+  qualys_api_url: your-qualys-endpoint-url
+  qualys_username: your-qualys-username
+  qualys_password: your-qualys-password

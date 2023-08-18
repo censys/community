@@ -1,0 +1,88 @@
+image: node:latest
+
+before_script:
+  - apt-get update -qq && apt-get install
+
+variables:
+  NPM_TOKEN: undefined
+
+stages:
+  - build
+  - test
+  # - publish
+
+.yarn:
+  cache:
+    key:
+      files:
+        - yarn.lock
+    paths:
+      - .yarn-cache/
+  before_script:
+    - echo 'yarn-offline-mirror ".yarn-cache/"' >> .yarnrc
+    - echo 'yarn-offline-mirror-pruning true' >> .yarnrc
+    - yarn install --frozen-lockfile --no-progress
+
+build @censys/search:
+  extends: .yarn
+  stage: build
+  script:
+    - yarn workspace @censys/search run build
+
+build @censys/asm:
+  extends: .yarn
+  stage: build
+  script:
+    - yarn workspace @censys/asm run build
+
+lint:
+  extends: .yarn
+  stage: test
+  script:
+    - yarn run lint:ci
+  artifacts:
+    when: always
+    paths:
+      - eslint.xml
+    reports:
+      junit: eslint.xml
+
+test @censys/search:
+  extends: .yarn
+  stage: test
+  script:
+    - yarn run test:search --ci
+  artifacts:
+    when: always
+    paths:
+      - packages/censys-search/junit.xml
+    reports:
+      junit: packages/censys-search/junit.xml
+
+test @censys/asm:
+  extends: .yarn
+  stage: test
+  script:
+    - yarn run test:asm --ci
+  artifacts:
+    when: always
+    paths:
+      - packages/censys-asm/junit.xml
+    reports:
+      junit: packages/censys-asm/junit.xml
+
+# .yarn-release:
+#   extends: .yarn
+#   stage: publish
+#   variables:
+#     NPM_TOKEN: $NODE_AUTH_TOKEN
+
+# release @censys/search:
+#   extends: .yarn-release
+#   script:
+#     - yarn workspace @censys/search publish --non-interactive
+
+# release @censys/asm:
+#   extends: .yarn-release
+#   script:
+#     - yarn workspace @censys/asm publish --non-interactive

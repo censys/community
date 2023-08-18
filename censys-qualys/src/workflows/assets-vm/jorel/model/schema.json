@@ -1,0 +1,24 @@
+{	"name": "tenable",
+	
+	"table": [
+				{	"name": "logbook",
+					"index": ["id", "sha256"],
+					"primaryKey": "id",
+					"foreignKey": {"certificates": "sha256"},
+					"column": []
+				},
+				{	"name": "qualys",
+					"index": ["id"],
+					"primaryKey": "id",
+					"foreignKey": {},
+					"column": []
+				},
+				{	"name": "assets",
+					"index": ["id"],
+					"primaryKey": "id",
+					"foreignKey": {},
+					"column": []
+				}
+				
+			]
+}

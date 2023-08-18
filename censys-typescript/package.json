@@ -1,0 +1,41 @@
+{
+  "name": "@censys/typescript",
+  "version": "3.0.0",
+  "license": "Apache-2.0",
+  "private": true,
+  "scripts": {
+    "postinstall": "husky install",
+    "format": "prettier --write 'packages/**/*.ts'",
+    "lint": "eslint .",
+    "lint:ci": "eslint . -f junit -o eslint.xml",
+    "generate:search": "cd packages/censys-search/ && openapi -i openapi.yml -o src -c axios --name CensysSearch && cd ../.. && yarn run format",
+    "generate:asm": "cd packages/censys-asm/ && openapi -i openapi.json -o src -c axios --name CensysASM && cd ../.. && yarn run format",
+    "test:search": "yarn workspace @censys/search run test",
+    "test:asm": "yarn workspace @censys/asm run test",
+    "test": "yarn test:search && yarn test:asm",
+    "publish:search": "yarn workspace @censys/search build && yarn workspace @censys/search publish --non-interactive --access public",
+    "publish:asm": "yarn workspace @censys/asm build && yarn workspace @censys/asm publish --non-interactive --access public",
+    "publish": "yarn publish:search && yarn publish:asm"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.28.0",
+    "@typescript-eslint/parser": "^5.28.0",
+    "esbuild": "^0.14.47",
+    "eslint": "^8.17.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-jest": "^26.5.3",
+    "husky": "^8.0.1",
+    "npm-dts": "^1.3.12",
+    "openapi-typescript-codegen": "^0.23.0",
+    "prettier": "^2.7.1",
+    "prettier-plugin-organize-imports": "^2.3.4",
+    "ts-node": "^10.8.1",
+    "typedoc": "^0.23.2",
+    "typescript": "^4.7.3"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "packageManager": "yarn@3.2.2"
+}

@@ -1,0 +1,26 @@
+{
+	"Summary": 
+	[
+		"Import seeds from your Qualys VM account into the Censys Attack Surface Management platform."
+	],
+
+	"Options":
+	[
+		{
+			"Option": "--seedsLabel",
+			"Value(s)": "",
+			"Default": "qualys-vm",
+			"req": " X ",
+			"Description": "The label for imported seeds."
+		}
+	],
+
+	"Footer":
+	[
+		"For support visit: https://support.censys.io",
+		"API docs can be found here: https://app.censys.io/api-docs"
+	]
+
+}
+
+

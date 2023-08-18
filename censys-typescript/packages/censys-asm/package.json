@@ -1,0 +1,36 @@
+{
+  "name": "@censys/asm",
+  "description": "An easy-to-use and lightweight Typescript wrapper for Censys ASM APIs.",
+  "version": "1.0.2",
+  "license": "Apache-2.0",
+  "keywords": [
+    "censys",
+    "asm",
+    "api"
+  ],
+  "homepage": "https://github.com/censys/censys-typescript/packages/censys-asm/",
+  "repository": "github:censys/censys-typescript.git",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "module": "dist/index.esm.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "node build.js",
+    "test": "jest",
+    "docs": "typedoc --options typedoc.json"
+  },
+  "dependencies": {
+    "axios": "^0.27.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.2",
+    "axios-mock-adapter": "^1.21.1",
+    "jest": "^29.6.0",
+    "jest-junit": "^16.0.0",
+    "prettier": "2.7.0",
+    "ts-jest": "^29.1.1",
+    "typescript": "^4.7.3"
+  }
+}

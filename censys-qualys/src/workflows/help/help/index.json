@@ -1,0 +1,26 @@
+{
+	"Summary": 
+	[
+		"The Censys Attack Surface Management (ASM) platform integration for Qualys VM",
+		" ",
+		"Type exit to quit.",
+		" ",
+		"To see help for each workflow and task, use the --help option.",
+		"For example: assets manage --help"
+
+	],
+
+	"Options":
+	[
+		{
+			"Workflow": "assets-vm",
+			"Description": "Manage the tags and seeds of your assets in the Censys Attack Surface Management platform."
+		}
+	],
+
+	"Footer":
+	[
+		"For support visit: https://support.censys.io"
+	]
+
+}

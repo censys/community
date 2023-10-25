@@ -18,6 +18,6 @@
     "prompt-sync": "^4.2.0",
     "prompt-sync-history": "^1.0.1",
     "yaml": "^1.10.0",
-    "yargs-parser": "^17.0.1"
+    "yargs-parser": "^18.1.1"
   }
 }

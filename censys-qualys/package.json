@@ -12,7 +12,7 @@
     "as-table": "^1.0.55",
     "chalk": "^3.0.0",
     "fast-csv": "^4.1.1",
-    "fast-xml-parser": "^3.18.0",
+    "fast-xml-parser": "^4.2.5",
     "fetch": "^1.1.0",
     "form-data": "^3.0.0",
     "prompt-sync": "^4.2.0",

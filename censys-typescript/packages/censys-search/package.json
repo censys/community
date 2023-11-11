@@ -22,7 +22,7 @@
     "docs": "typedoc --options typedoc.json"
   },
   "dependencies": {
-    "axios": "^0.27.2"
+    "axios": "^1.6.0"
   },
   "devDependencies": {
     "@types/jest": "^29.5.2",
